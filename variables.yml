@@ -1,0 +1,5 @@
+variables:
+  - name: Build
+    value: 'Java'
+  - name: vmImage
+    value: 'ubuntu-latest'
