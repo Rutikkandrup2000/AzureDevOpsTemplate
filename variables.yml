@@ -3,3 +3,5 @@ variables:
     value: 'Java'
   - name: vmImage
     value: 'ubuntu-latest'
+  - name: testResultsFiles
+    value: 
