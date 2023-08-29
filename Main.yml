@@ -17,6 +17,7 @@ steps:
           # sonar.exclusions=**/*.bin
             sonar.projectKey="$(project-key)"
             sonar.projectName="$(Project-Name)
+    - template: SonarCloud.yml
   - template: MavenBuild.yml
 - ${{ else }}:
   - template: SonarCloud.yml
