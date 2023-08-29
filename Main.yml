@@ -1,0 +1,4 @@
+steps:
+- template: MavenBuild.yml
+- template: SonarCloud.yml
+- template: Docker.yml
