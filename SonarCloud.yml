@@ -15,4 +15,4 @@ steps:
     jdkversion: 'JAVA_HOME_11_X64'
 - task: SonarCloudPublish@1
   inputs:
-    pollingTimeoutSec: ${{ variables.pollingTimeoutSec }}
+    pollingTimeoutSec: '300'
