@@ -15,4 +15,6 @@ variables:
     value: ProjectDemo
 #  - name: pollingTimeoutSec
 #    value: 300
-
+  - name: repository
+    value: 'rutik0205 / projectdemo'
+  - name: 
