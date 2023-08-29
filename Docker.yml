@@ -1,0 +1,12 @@
+steps:
+- task: Docker@2
+  inputs:
+    containerRegistry: 'Docker'
+    command: 'login'
+- task: Docker@2
+  inputs:
+    containerRegistry: 'Docker'
+    repository: ${{parameters.repository}}
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
+    tags: ${{parameters.tags}}
