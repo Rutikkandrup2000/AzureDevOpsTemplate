@@ -18,6 +18,5 @@ steps:
             sonar.projectKey="$(project-key)"
             sonar.projectName="$(Project-Name)
   - template: MavenBuild.yml
-- ${{ else }}:
   - template: SonarCloud.yml
   - template: Docker.yml
