@@ -5,7 +5,7 @@ parameters:
     type: string
 steps:
 - ${{ if eq(parameters.Build, 'Java') }}:
-  - ${{ if eq(variables.sonarQubeRunAnalysis, 'true') }}:
+  - ${{ if eq(parameters.sonarQubeRunAnalysis, 'true') }}:
     - template: SonarCloud.yml
     - task: SonarCloudPrepare@1
       inputs:
