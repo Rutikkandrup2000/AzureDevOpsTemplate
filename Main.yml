@@ -2,7 +2,9 @@ parameters:
   - name: Build
     type: string
 steps:
-- ${{ if eq(parameters.Build, 'Java') }}:
+- ${{ and if eq(parameters.Build, 'Java'), eq(variables.sonarQubeRunAnalysis, 'true') }}:
+  - template: SonarCloud.yml
+    - task: SonarCloudPrepare@1
   - template: MavenBuild.yml
 - ${{ else }}:
   - template: SonarCloud.yml
