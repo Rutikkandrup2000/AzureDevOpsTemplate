@@ -1,4 +1,6 @@
 steps:
-- template: MavenBuild.yml
-- template: SonarCloud.yml
-- template: Docker.yml
+- ${{ if eq(variables.Build, 'Java') }}:
+  - template: MavenBuild.yml
+- ${{ else }}:
+  - template: SonarCloud.yml
+  - template: Docker.yml
