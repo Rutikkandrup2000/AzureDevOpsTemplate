@@ -4,4 +4,4 @@ variables:
   - name: vmImage
     value: 'ubuntu-latest'
   - name: testResultsFiles
-    value: 
+    value: '**/surefire-reports/TEST-*.xml'
