@@ -14,5 +14,5 @@ variables:
   - name: Project-Name
     value: ProjectDemo
   - name: pollingTimeoutSec
-    value: '300'
+    value: 300
 
