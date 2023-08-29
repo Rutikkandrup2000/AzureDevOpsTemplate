@@ -7,3 +7,10 @@ variables:
     value: '**/surefire-reports/TEST-*.xml'
   - name: sonarQubeRunAnalysis
     value: true
+  - name: Organization
+    value: azuredevops-201
+  - name: project-key
+    value: AzureDevOps-201_ProjectDemo
+  - name: Project-Name
+    value: ProjectDemo
+
