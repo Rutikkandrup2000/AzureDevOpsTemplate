@@ -17,4 +17,5 @@ variables:
 #    value: 300
   - name: repository
     value: 'rutik0205 / projectdemo'
-  - name: 
+  - name: tags
+    value: latest
