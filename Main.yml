@@ -1,6 +1,8 @@
 parameters:
   - name: Build
     type: string
+  - name: sonarQubeRunAnalysis
+    type: string
 steps:
 - ${{ if eq(parameters.Build, 'Java') }}:
   - ${{ if eq(variables.sonarQubeRunAnalysis, 'true') }}:
