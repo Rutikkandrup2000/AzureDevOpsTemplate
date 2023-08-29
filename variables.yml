@@ -13,6 +13,6 @@ variables:
     value: AzureDevOps-201_ProjectDemo
   - name: Project-Name
     value: ProjectDemo
-  - name: pollingTimeoutSec
-    value: 300
+#  - name: pollingTimeoutSec
+#    value: 300
 
