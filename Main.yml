@@ -1,6 +1,5 @@
 parameters:
   - name: Build
-    default: Java
     type: string
 steps:
 - ${{ if eq(parameters.Build, 'Java') }}:
