@@ -5,3 +5,5 @@ variables:
     value: 'ubuntu-latest'
   - name: testResultsFiles
     value: '**/surefire-reports/TEST-*.xml'
+  - name: sonarQubeRunAnalysis
+    value: true
