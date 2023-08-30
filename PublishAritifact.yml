@@ -1,11 +1,11 @@
 steps:
 - task: CopyFiles@2
   inputs:
-    SourceFolder: '$(system.defaultworkingdirectory)'
+    SourceFolder: ${{ variables.SourceFolder}}
     Contents: '**/*.jar'
-    TargetFolder: '$(build.artifactstagingdirectory)'
+    TargetFolder: ${{ variables.TargetFolder}}
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
+    ArtifactName: ${{ variables.ArtifactName}}
     publishLocation: 'Container'
