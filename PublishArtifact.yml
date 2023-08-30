@@ -3,7 +3,7 @@ steps:
   inputs:
     SourceFolder: ${{ variables.SourceFolder}}
     Contents: '**/*.jar'
-    TargetFolder: ${{ variables.TargetFolder}}
+    TargetFolder: '$(build.artifactstagingdirectory)'
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
