@@ -19,3 +19,9 @@ variables:
     value: 'rutik0205 / projectdemo'
   - name: tags
     value: latest
+  - name: SourceFolder
+    value: '$(system.defaultworkingdirectory)'
+  - name: TargetFolder
+    value: '$(build.artifactstagingdirectory)'
+  - name: ArtifactName
+    value: 'drop'
