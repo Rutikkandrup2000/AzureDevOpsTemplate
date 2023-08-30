@@ -24,4 +24,4 @@ variables:
   - name: TargetFolder
     value: '$(build.artifactstagingdirectory)'
   - name: ArtifactName
-    value: 'drop'
+    value: drop
