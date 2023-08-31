@@ -2,7 +2,7 @@ variables:
   - name: Build
     value: 'Java'
   - name: vmImage
-    value: 'ubuntu-latest'
+    value: 'windows-latest'
   - name: testResultsFiles
     value: '**/surefire-reports/TEST-*.xml'
   - name: sonarQubeRunAnalysis
