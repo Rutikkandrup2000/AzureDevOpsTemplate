@@ -3,7 +3,7 @@ parameters:
     type: string
   - name: sonarQubeRunAnalysis
     type: string
-    default: true
+    default: false
 steps:
 - ${{ if eq(parameters.Build, 'Java') }}:
   - template: JavaTemplate.yml
