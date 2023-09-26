@@ -1,5 +1,5 @@
 steps:
-- ${{ if eq(variables.sonarQubeRunAnalysis, 'true') }}:
+- ${{ if eq(parameters.sonarQubeRunAnalysis, 'true') }}:
   - template: sonarcloudprepare.yml
     # - task: SonarCloudPrepare@1
     #   inputs:
@@ -13,7 +13,7 @@ steps:
     #         sonar.projectKey="$(project-key)"
     #         sonar.projectName="$(Project-Name)
 - template: MavenBuild.yml
-- ${{ if eq(variables.sonarQubeRunAnalysis, 'true') }}:
+- ${{ if eq(parameters.sonarQubeRunAnalysis, 'true') }}:
   - template: SonarCloud.yml
 - template: Docker.yml
 - template: PublishArtifact.yml
