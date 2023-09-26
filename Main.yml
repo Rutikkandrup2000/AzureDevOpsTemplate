@@ -23,3 +23,5 @@ steps:
     - template: SonarCloud.yml
   - template: Docker.yml
   - template: PublishArtifact.yml
+- ${{ if eq(parameters.Build, 'dotnet') }}:
+  - script: This is a dotnet template
