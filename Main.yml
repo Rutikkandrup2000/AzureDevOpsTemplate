@@ -2,6 +2,7 @@ parameters:
   - name: Build
     type: string
   - name: sonarQubeRunAnalysis
+    type: string
     default: true
 steps:
 - ${{ if eq(parameters.Build, 'Java') }}:
