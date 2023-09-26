@@ -5,23 +5,24 @@ parameters:
     type: string
 steps:
 - ${{ if eq(parameters.Build, 'Java') }}:
-  - ${{ if eq(parameters.sonarQubeRunAnalysis, 'true') }}:
-    - template: sonarcloudprepare.yml
-    # - task: SonarCloudPrepare@1
-    #   inputs:
-    #     SonarCloud: 'SonarCloud'
-    #     organization: "$(organization)"
-    #     scannerMode: 'Other'
-    #     extraProperties: |
-    #       # Additional properties that will be passed to the scanner,
-    #       # Put one key=value per line, example:
-    #       # sonar.exclusions=**/*.bin
-    #         sonar.projectKey="$(project-key)"
-    #         sonar.projectName="$(Project-Name)
-  - template: MavenBuild.yml
-  - ${{ if eq(parameters.sonarQubeRunAnalysis, 'true') }}:
-    - template: SonarCloud.yml
-  - template: Docker.yml
-  - template: PublishArtifact.yml
+  - template: JavaTemplate.yml
+  # - ${{ if eq(parameters.sonarQubeRunAnalysis, 'true') }}:
+  #   - template: sonarcloudprepare.yml
+  #   # - task: SonarCloudPrepare@1
+  #   #   inputs:
+  #   #     SonarCloud: 'SonarCloud'
+  #   #     organization: "$(organization)"
+  #   #     scannerMode: 'Other'
+  #   #     extraProperties: |
+  #   #       # Additional properties that will be passed to the scanner,
+  #   #       # Put one key=value per line, example:
+  #   #       # sonar.exclusions=**/*.bin
+  #   #         sonar.projectKey="$(project-key)"
+  #   #         sonar.projectName="$(Project-Name)
+  # - template: MavenBuild.yml
+  # - ${{ if eq(parameters.sonarQubeRunAnalysis, 'true') }}:
+  #   - template: SonarCloud.yml
+  # - template: Docker.yml
+  # - template: PublishArtifact.yml
 - ${{ if eq(parameters.Build, 'dotnet') }}:
   - bash: echo "This is a dotnet template"
