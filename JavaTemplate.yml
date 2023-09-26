@@ -1,6 +1,6 @@
 parameters:
   - name: sonarQubeRunAnalysis
-    type: String   
+    type: string   
 steps:
 - ${{ if eq(variables.sonarQubeRunAnalysis, 'true') }}:
   - template: sonarcloudprepare.yml
