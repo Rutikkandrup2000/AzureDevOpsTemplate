@@ -1,6 +1,6 @@
 parameters:
   - name: ${{ variables.Java }}
-    type: string
+    # type: string
   - name: sonarQubeRunAnalysis
     type: string
 steps:
