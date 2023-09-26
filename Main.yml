@@ -24,4 +24,4 @@ steps:
   - template: Docker.yml
   - template: PublishArtifact.yml
 - ${{ if eq(parameters.Build, 'dotnet') }}:
-  - script: This is a dotnet template
+  - bash: echo "This is a dotnet template"
