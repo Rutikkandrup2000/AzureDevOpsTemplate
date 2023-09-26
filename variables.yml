@@ -1,6 +1,6 @@
 variables:
-  - name: Build
-    value: 'Java'
+  - name: Java
+    value: true
   - name: vmImage
     value: 'ubuntu-latest'
   - name: testResultsFiles
