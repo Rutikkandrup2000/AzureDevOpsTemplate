@@ -1,0 +1,2 @@
+steps:
+- bash: echo "This is a dotnet template"
