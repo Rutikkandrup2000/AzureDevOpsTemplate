@@ -1,6 +1,6 @@
 steps:
 - ${{ if eq(parameters.sonarQubeRunAnalysis, 'true') }}:
-    - template: sonarcloudprepare.yml
+  - template: sonarcloudprepare.yml
     # - task: SonarCloudPrepare@1
     #   inputs:
     #     SonarCloud: 'SonarCloud'
@@ -12,8 +12,8 @@ steps:
     #       # sonar.exclusions=**/*.bin
     #         sonar.projectKey="$(project-key)"
     #         sonar.projectName="$(Project-Name)
-  - template: MavenBuild.yml
-  - ${{ if eq(parameters.sonarQubeRunAnalysis, 'true') }}:
-    - template: SonarCloud.yml
-  - template: Docker.yml
-  - template: PublishArtifact.yml
+- template: MavenBuild.yml
+- ${{ if eq(parameters.sonarQubeRunAnalysis, 'true') }}:
+  - template: SonarCloud.yml
+- template: Docker.yml
+- template: PublishArtifact.yml
