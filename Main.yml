@@ -6,8 +6,7 @@ steps:
     # condition: ${{ eq(variables.Build, 'Java') }}
     condition:  eq('${{ variables.Build }}', 'Java')
   - template: JavaTemplate.yml
-    condition:  eq('${{ variables.Build }}', 'dotnet')
-  - template: dotnetTemplate.yml
+
 # - ${{ if eq(variables.Build, 'Java') }}:
 #   - template: JavaTemplate.yml
 # - ${{ if eq(variables.Build, 'dotnet') }}:
