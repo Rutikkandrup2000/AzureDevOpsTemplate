@@ -10,10 +10,7 @@
 #   - template: JavaTemplate.yml
 # - ${{ if eq(variables.Build, 'dotnet') }}:
 #   - template: dotnetTemplate.yml
-stages:
-- stage: A
-  condition:  eq('${{ variables.Build }}', 'Java')
-  jobs:
-  - job:
-    steps:
-      - template: JavaTemplate.yml
+
+condition:  eq('${{ variables.Build }}', 'Java')
+steps:
+  - template: JavaTemplate.yml
