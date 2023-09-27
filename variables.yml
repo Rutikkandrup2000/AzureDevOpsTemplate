@@ -1,27 +1,28 @@
 variables:
-  - name: Build
-    value: Java
-  - name: vmImage
-    value: 'ubuntu-latest'
-  - name: testResultsFiles
-    value: '**/surefire-reports/TEST-*.xml'
-  - name: sonarQubeRunAnalysis
-    value: true
-  - name: Organization
-    value: azuredevops-201
-  - name: project-key
-    value: AzureDevOps-201_ProjectDemo
-  - name: Project-Name
-    value: ProjectDemo
-#  - name: pollingTimeoutSec
-#    value: 300
-  - name: repository
-    value: 'rutik0205 / projectdemo'
-  - name: tags
-    value: latest
-  - name: SourceFolder
-    value: '$(system.defaultworkingdirectory)'
-  - name: TargetFolder
-    value: '$(build.artifactstagingdirectory)'
-  - name: ArtifactName
-    value: drop
+  - Build: 'Java'
+
+  - vmImage: 'ubuntu-latest'
+
+  - testResultsFiles: '**/surefire-reports/TEST-*.xml'
+
+  - sonarQubeRunAnalysis: true
+
+  - Organization: 'azuredevops-201'
+
+  - project-key: 'AzureDevOps-201_ProjectDemo'
+
+  - Project-Name: 'ProjectDemo'
+
+  - pollingTimeoutSec: ''
+    default: '300'
+
+  - repository: 'rutik0205 / projectdemo'
+
+  - tags: 'latest'
+
+  - SourceFolder: '$(system.defaultworkingdirectory)'
+
+  - TargetFolder: '$(build.artifactstagingdirectory)'
+
+  - ArtifactName: ''
+    default: 'drop'
