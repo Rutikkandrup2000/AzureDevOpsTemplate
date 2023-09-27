@@ -2,7 +2,9 @@
 # - name: Build
 #   type: string
 steps:
-- ${{ if eq(variables.Build, 'Java') }}:
-  - template: JavaTemplate.yml
-- ${{ if eq(variables.Build, 'dotnet') }}:
-  - template: dotnetTemplate.yml
+# - ${{ if eq(variables.Build, 'Java') }}:
+#   - template: JavaTemplate.yml
+# - ${{ if eq(variables.Build, 'dotnet') }}:
+#   - template: dotnetTemplate.yml
+condition: ${{ eq(variables.build, 'Java') }}
+- template: JavaTemplate.yml
