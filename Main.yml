@@ -1,5 +1,6 @@
 parameters:
-  build: 'Java'
+- name: Build
+  type: string
 steps:
 - ${{ if eq(variables.Build, 'Java') }}:
   - template: JavaTemplate.yml
