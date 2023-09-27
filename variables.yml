@@ -1,28 +1,16 @@
 variables:
   - Build: 'Java'
-
   - vmImage: 'ubuntu-latest'
-
   - testResultsFiles: '**/surefire-reports/TEST-*.xml'
-
   - sonarQubeRunAnalysis: true
-
   - Organization: 'azuredevops-201'
-
   - project-key: 'AzureDevOps-201_ProjectDemo'
-
   - Project-Name: 'ProjectDemo'
-
   - pollingTimeoutSec: ''
     default: '300'
-
   - repository: 'rutik0205 / projectdemo'
-
   - tags: 'latest'
-
   - SourceFolder: '$(system.defaultworkingdirectory)'
-
   - TargetFolder: '$(build.artifactstagingdirectory)'
-
   - ArtifactName: ''
     default: 'drop'
