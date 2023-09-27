@@ -1,14 +1,23 @@
 variables:
+#*********** Maven Build***************************
   Build: 'Java'
   vmImage: 'ubuntu-latest'
   testResultsFiles: '**/surefire-reports/TEST-*.xml'
   sonarQubeRunAnalysis: true
+
+ #********** SonarCube **************************** 
   Organization: 'azuredevops-201'
   project-key: 'AzureDevOps-201_ProjectDemo'
   Project-Name: 'ProjectDemo'
   pollingTimeoutSec: 300
+
+#************ Docker ******************************
   repository: 'rutik0205 / projectdemo'
   tags: 'latest'
+
+#************ Publish Artifacts********************
   SourceFolder: '$(system.defaultworkingdirectory)'
   TargetFolder: '$(build.artifactstagingdirectory)'
   ArtifactName: 'drop'
+
+#***************************************************
