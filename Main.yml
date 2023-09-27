@@ -4,13 +4,12 @@
 steps:
   - script: echo I did a thing
     # condition:  eq('${{ variables.Build }}', 'Java')
-    condition: eq(variables['Build'], 'Java')
   - template: JavaTemplate.yml
+    condition: eq(variables['Build'], 'Java')
   - script: echo I did a thing
     # condition:  eq('${{ variables.Build }}', 'Java')
-    condition: eq(variables['Build'], 'dotnet')
   - template: dotnetTemplate.yml
-
+    condition: eq(variables['Build'], 'dotnet')
 # - ${{ if eq(variables.Build, 'Java') }}:
 #   - template: JavaTemplate.yml
 # - ${{ if eq(variables.Build, 'dotnet') }}:
