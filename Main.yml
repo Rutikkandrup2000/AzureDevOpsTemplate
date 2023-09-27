@@ -1,11 +1,24 @@
 # parameters:
 # - name: Build
 #   type: string
-steps:
-  - script: echo I did a thing
-    # condition: ${{ eq(variables.Build, 'Java') }}
-    condition:  eq('${{ variables.Build }}', 'Java')
+resources:
+  repositories:
+    - repository: ProjectDemo
+      type: git
+      name: ProjectDemo
+variables:
+- template: variables.yml@ProjectDemo
+
+jobs:
+- job: 
+  condition:  eq('${{ variables.Build }}', 'Java')
+  steps: 
   - template: JavaTemplate.yml
+# steps:
+#   - script: echo I did a thing
+#     # condition: ${{ eq(variables.Build, 'Java') }}
+#     condition:  eq('${{ variables.Build }}', 'Java')
+#   - template: JavaTemplate.yml
 
 # - ${{ if eq(variables.Build, 'Java') }}:
 #   - template: JavaTemplate.yml
