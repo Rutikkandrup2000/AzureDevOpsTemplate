@@ -6,5 +6,5 @@ steps:
 #   - template: JavaTemplate.yml
 # - ${{ if eq(variables.Build, 'dotnet') }}:
 #   - template: dotnetTemplate.yml
-condition: ${{ eq(variables.build, 'Java') }}
+condition: ${{ eq(variables.Build, 'Java') }}
 - template: JavaTemplate.yml
