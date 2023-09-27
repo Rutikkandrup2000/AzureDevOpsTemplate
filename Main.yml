@@ -3,8 +3,8 @@
 #   type: string
 steps:
     # condition: ${{ eq(variables.Build, 'Java') }}
-    condition:  eq('${{ variables.Build }}', 'Java')
-  - template: JavaTemplate.yml@AzureDevOpsTemplate
+  condition:  eq('${{ variables.Build }}', 'Java')
+- template: JavaTemplate.yml@AzureDevOpsTemplate
 # - ${{ if eq(variables.Build, 'Java') }}:
 #   - template: JavaTemplate.yml
 # - ${{ if eq(variables.Build, 'dotnet') }}:
