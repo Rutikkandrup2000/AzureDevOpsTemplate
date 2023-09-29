@@ -1,12 +1,12 @@
-parameters:
-- name: sonarQubeRunAnalysis
-  type: string
-  default: false
+# parameters:
+# - name: sonarQubeRunAnalysis
+#   type: string
+#   default: false
 steps:
-- ${{ if eq(variables.sonarQubeRunAnalysis, 'true') }}:
+- ${{ if eq(parameters.sonarQubeRunAnalysis, 'true') }}:
   - template: sonarcloudprepare.yml
 - template: MavenBuild.yml
-- ${{ if eq(variables.sonarQubeRunAnalysis, 'true') }}:
+- ${{ if eq(parameters.sonarQubeRunAnalysis, 'true') }}:
   - template: SonarCloud.yml
 - template: Docker.yml
 - template: PublishArtifact.yml
