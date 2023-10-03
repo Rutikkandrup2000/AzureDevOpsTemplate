@@ -10,7 +10,8 @@ steps:
   - template: MavenBuild.yml
   - ${{ if eq(parameters.sonarQubeRunAnalysis, true) }}:
     - template: SonarCloud.yml
-  - template: Docker.yml
+  - ${{ if eq(parameters.Docker, true) }}:
+    - template: Docker.yml
   - template: PublishArtifact.yml
 - ${{ if eq(parameters.Build, 'dotnet') }}:
   - template: dotnetTemplate.yml
