@@ -3,7 +3,6 @@ parameters:
   type: string
 - name: sonarQubeRunAnalysis
   type: string
-  default: false
 steps:
 - ${{ if eq(parameters.Build, 'Java') }}:
   - ${{ if eq(parameters.sonarQubeRunAnalysis, true) }}:
