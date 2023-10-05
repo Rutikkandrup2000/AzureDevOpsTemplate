@@ -1,5 +1,6 @@
 variables:
-  Build: 'Java'
+- name: Build
+  value: 'Java'
 steps:
 - ${{ if eq(variables.Build, 'Java') }}:
   - ${{ if eq(parameters.sonarQubeRunAnalysis, true) }}:
