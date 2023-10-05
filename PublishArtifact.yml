@@ -7,5 +7,5 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: ${{ variable.ArtifactName}}
+    ArtifactName: ${{ variables.ArtifactName}}
     publishLocation: 'Container'
