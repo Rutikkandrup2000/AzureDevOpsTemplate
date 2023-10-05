@@ -1,8 +1,12 @@
-variables:
+parameters:
 - name: Build
-  value: 'Java'
+  type: string
+- name: sonarQubeRunAnalysis
+  type: string
+- name: Docker
+  type: string
 steps:
-- ${{ if eq(variables.Build, 'Java') }}:
+- ${{ if eq(parameters.Build, 'Java') }}:
   - ${{ if eq(parameters.sonarQubeRunAnalysis, true) }}:
     - template: sonarcloudprepare.yml
   - template: MavenBuild.yml
