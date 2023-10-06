@@ -1,5 +1,5 @@
 variables:
-- template: variables.yml@ProjectDemo
+  - template: variables.yml@ProjectDemo
 steps:
 - ${{ if eq(variables.Build, 'Java') }}:
   - ${{ if eq(variables.sonarQubeRunAnalysis, true) }}:
