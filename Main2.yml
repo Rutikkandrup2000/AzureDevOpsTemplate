@@ -4,7 +4,7 @@ resources:
     - repository: ProjectDemo
       type: git
       name: ProjectDemo
-prameters:
+parameters:
 - name: ${{ variables.Build }}
 - name: ${{ variables.sonarQubeRunAnalysis }}
 - name: ${{ variables.Docker }}
