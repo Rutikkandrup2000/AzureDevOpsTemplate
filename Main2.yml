@@ -11,13 +11,13 @@ prameters:
 variables:
 - template: variables.yml@ProjectDemo
 steps:
-- ${{ if eq(parameters.Build, 'Java') }}:
-  - ${{ if eq(parameters.sonarQubeRunAnalysis, true) }}:
+- ${{ if eq(variables.Build, 'Java') }}:
+  - ${{ if eq(variables.sonarQubeRunAnalysis, true) }}:
     - template: sonarcloudprepare.yml
   - template: MavenBuild.yml
-  - ${{ if eq(parameters.sonarQubeRunAnalysis, true) }}:
+  - ${{ if eq(variables.sonarQubeRunAnalysis, true) }}:
     - template: SonarCloud.yml
-  - ${{ if eq(parameters.Docker, true) }}:
+  - ${{ if eq(variables.Docker, true) }}:
     - template: Docker.yml
   - template: PublishArtifact.yml
 - ${{ if eq(variables.Build, 'dotnet') }}:
