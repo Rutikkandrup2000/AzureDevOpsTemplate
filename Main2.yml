@@ -1,14 +1,3 @@
-variables:
-  - template: variables.yml@ProjectDemo
 steps:
-- ${{ if eq(variables.Build, 'Java') }}:
-  - ${{ if eq(variables.sonarQubeRunAnalysis, true) }}:
-    - template: sonarcloudprepare.yml
-  - template: MavenBuild.yml
-  - ${{ if eq(variables.sonarQubeRunAnalysis, true) }}:
-    - template: SonarCloud.yml
-  - ${{ if eq(variables.Docker, true) }}:
-    - template: Docker.yml
-  - template: PublishArtifact.yml
-- ${{ if eq(variables.Build, 'dotnet') }}:
-  - template: dotnetTemplate.yml
+condition: eq(variables.Build, 'Java')
+- template: MavenBuild.yml
