@@ -1,13 +1,3 @@
-trigger: none
-resources:
-  repositories:
-    - repository: ProjectDemo
-      type: git
-      name: ProjectDemo
-parameters:
-- name: ${{ variables.Build }}
-- name: ${{ variables.sonarQubeRunAnalysis }}
-- name: ${{ variables.Docker }}
 variables:
 - template: variables.yml@ProjectDemo
 steps:
