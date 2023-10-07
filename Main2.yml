@@ -1,0 +1,9 @@
+steps:
+- ${{ if eq(variables['Build'], 'Java') && eq(variables['sonarQubeRunAnalysis'], true) }}:
+  - template: sonarcloudprepare.yml
+- template: MavenBuild.yml
+- ${{ if eq(variables['sonarQubeRunAnalysis'], true) }}:
+  - template: SonarCloud.yml
+- ${{ if eq(variables['Docker'], true) }}:
+  - template: Docker.yml
+- template: PublishArtifact.yml
