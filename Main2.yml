@@ -1,3 +1,0 @@
-steps:
-condition: eq(variables.Build, 'Java')
-- template: MavenBuild.yml
