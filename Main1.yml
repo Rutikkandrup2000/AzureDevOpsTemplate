@@ -1,10 +1,13 @@
 parameters:
-- name: Build
-  type: string
-- name: sonarQubeRunAnalysis
-  type: string
-- name: Docker
-  type: string
+  Build: ${{varibales.Build}}
+  sonarQubeRunAnalysis: ${{variables.sonarQubeRunAnalysis}}
+  Docker: ${{variables.Docker}}
+# - name: Build
+#   type: string
+# - name: sonarQubeRunAnalysis
+#   type: string
+# - name: Docker
+#   type: string
 steps:
 - ${{ if eq(parameters.Build, 'Java') }}:
   - ${{ if eq(parameters.sonarQubeRunAnalysis, true) }}:
