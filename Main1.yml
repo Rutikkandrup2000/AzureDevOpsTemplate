@@ -1,5 +1,5 @@
 parameters:
-- Build: ${{varibales.Build}}
+- Build: $(varibales.Build)
 - sonarQubeRunAnalysis: ${{variables.sonarQubeRunAnalysis}}
 - Docker: ${{variables.Docker}}
 # - name: Build
