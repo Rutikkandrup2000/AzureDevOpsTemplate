@@ -1,7 +1,3 @@
-powershell: |
-  Write-Host "This is my $env:Build"
-env:
-  Build: ${{ variables.Build }}
 # parameters:
 #   Build: 'Java'
 #   sonarQubeRunAnalysis: false
