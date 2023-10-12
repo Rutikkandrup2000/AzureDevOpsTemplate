@@ -1,5 +1,5 @@
 parameters:
-  Build: 'Java'
+  Build: 'dotnet'
   sonarQubeRunAnalysis: false
   Docker: true
 # - name: Build
