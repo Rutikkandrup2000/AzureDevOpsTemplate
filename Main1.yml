@@ -1,7 +1,7 @@
 parameters:
   Build: $(varibales.Build)
-- sonarQubeRunAnalysis: ${{variables.sonarQubeRunAnalysis}}
-- Docker: ${{variables.Docker}}
+  sonarQubeRunAnalysis: $(variables.sonarQubeRunAnalysis)
+  Docker: $(variables.Docker)
 # - name: Build
 #   type: string
 # - name: sonarQubeRunAnalysis
