@@ -1,7 +1,7 @@
-parameters:
-  Build: 'Java'
-  sonarQubeRunAnalysis: false
-  Docker: true
+# parameters:
+#   Build: 'Java'
+#   sonarQubeRunAnalysis: false
+#   Docker: true
 # - name: Build
 #   type: string
 # - name: sonarQubeRunAnalysis
@@ -9,14 +9,14 @@ parameters:
 # - name: Docker
 #   type: string
 steps:
-- ${{ if eq(parameters.Build, 'Java') }}:
-  - ${{ if eq(parameters.sonarQubeRunAnalysis, true) }}:
+- ${{ if eq(Build, 'Java') }}:
+  - ${{ if eq(sonarQubeRunAnalysis, true) }}:
     - template: sonarcloudprepare.yml
   - template: MavenBuild.yml
-  - ${{ if eq(parameters.sonarQubeRunAnalysis, true) }}:
+  - ${{ if eq(sonarQubeRunAnalysis, true) }}:
     - template: SonarCloud.yml
-  - ${{ if eq(parameters.Docker, true) }}:
+  - ${{ if eq(Docker, true) }}:
     - template: Docker.yml
   - template: PublishArtifact.yml
-- ${{ if eq(parameters.Build, 'dotnet') }}:
+- ${{ if eq(Build, 'dotnet') }}:
   - template: dotnetTemplate.yml
