@@ -9,4 +9,4 @@ steps:
       # Put one key=value per line, example:
       # sonar.exclusions=**/*.bin
       sonar.projectKey="$(project-key)"
-      sonar.projectName="${{ variables.Project-Name }}"
+      sonar.projectName="$(Project-Name)""
