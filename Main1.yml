@@ -9,14 +9,14 @@
 # - name: Docker
 #   type: string
 steps:
-- ${{ if eq(Build, 'Java') }}:
-  - ${{ if eq(sonarQubeRunAnalysis, true) }}:
+- ${{ if eq('$(Build)', 'Java') }}:
+  - ${{ if eq('$(sonarQubeRunAnalysis)', true) }}:
     - template: sonarcloudprepare.yml
   - template: MavenBuild.yml
-  - ${{ if eq(sonarQubeRunAnalysis, true) }}:
+  - ${{ if eq('$(sonarQubeRunAnalysis)', true) }}:
     - template: SonarCloud.yml
-  - ${{ if eq(Docker, true) }}:
+  - ${{ if eq('$(Docker)', true) }}:
     - template: Docker.yml
   - template: PublishArtifact.yml
-- ${{ if eq(Build, 'dotnet') }}:
+- ${{ if eq('$(Build)', 'dotnet') }}:
   - template: dotnetTemplate.yml
