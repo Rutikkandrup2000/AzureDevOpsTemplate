@@ -1,6 +1,6 @@
 parameters:
   Build: 'Java'
-  sonarQubeRunAnalysis: false
+  sonarQubeRunAnalysis: true
   Docker: true
 # - name: Build
 #   type: string
