@@ -3,7 +3,7 @@ steps:
   inputs:
     mavenPomFile: 'pom.xml'
     publishJUnitResults: true
-    testResultsFiles: ${{ variables.testResultsFiles }}
+    testResultsFiles: $(testResultsFiles)
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.11'
     mavenVersionOption: 'Default'
