@@ -9,8 +9,8 @@ parameters:
 # - name: Docker
 #   type: string
 steps:
-- bash: $(Build)
 - ${{ if eq(parameters.Build, 'Java') }}:
+  - bash: $(Build)
   - ${{ if eq(parameters.sonarQubeRunAnalysis, true) }}:
     - template: sonarcloudprepare.yml
   - template: MavenBuild.yml
