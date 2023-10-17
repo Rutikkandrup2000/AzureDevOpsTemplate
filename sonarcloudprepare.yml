@@ -2,7 +2,7 @@ steps:
 - task: SonarCloudPrepare@1
   inputs:
     SonarCloud: 'SonarCloud'
-    organization: ${{ variables.Organization }}
+    organization: "$(organization)"
     scannerMode: 'Other'
     extraProperties: |
       # Additional properties that will be passed to the scanner,
