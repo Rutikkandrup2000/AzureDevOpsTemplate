@@ -3,7 +3,7 @@ steps:
   inputs:
     SourceFolder: $(SourceFolder)
     Contents: '**/*.jar'
-    TargetFolder: '$(build.artifactstagingdirectory)'
+    TargetFolder: $(TargetFolder)
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
