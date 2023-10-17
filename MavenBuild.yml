@@ -10,5 +10,5 @@ steps:
     mavenOptions: '-Xmx3072m'
     mavenAuthenticateFeed: false
     effectivePomSkip: false
-    sonarQubeRunAnalysis: ${{ variables.sonarQubeRunAnalysis }}
+    sonarQubeRunAnalysis: true
     sqMavenPluginVersionChoice: 'latest'
