@@ -9,7 +9,7 @@ parameters:
 # - name: Docker
 #   type: string
 steps:
-- script: echo ${{ variables.Build }}
+- script: echo '${{ variables.Build }}'
 - ${{ if eq(parameters.Build, 'Java') }}:
   - ${{ if eq(parameters.sonarQubeRunAnalysis, true) }}:
     - template: sonarcloudprepare.yml
