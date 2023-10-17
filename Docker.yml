@@ -8,7 +8,7 @@ steps:
   displayName: Docker Build And Push
   inputs:
     containerRegistry: 'DockerHub'
-    repository: ${{variables.repository}}
+    repository: $(repository)
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
-    tags: ${{variables.tags}}
+    tags: $(tags)
