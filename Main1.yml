@@ -1,7 +1,10 @@
 variables:
-  foo: $(Build)
-  fooo: $(sonarQubeRunAnalysis)
-  doc: $(Docker)
+- name: foo
+  value: $(Build)
+- name: fooo
+  value: $(sonarQubeRunAnalysis)
+- name: doc
+  value: $(Docker)
 # parameters:
 #   Build: 'Java'
 #   sonarQubeRunAnalysis: false
