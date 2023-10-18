@@ -1,10 +1,10 @@
-variables:
-- name: foo
-  value: $(Build)
-- name: fooo
-  value: $(sonarQubeRunAnalysis)
-- name: doc
-  value: $(Docker)
+# variables:
+# - name: foo
+#   value: $(Build)
+# - name: fooo
+#   value: $(sonarQubeRunAnalysis)
+# - name: doc
+#   value: $(Docker)
 # parameters:
 #   Build: 'Java'
 #   sonarQubeRunAnalysis: false
@@ -16,14 +16,14 @@ variables:
 # - name: Docker
 #   type: string
 steps:
-- ${{ if eq(variable.foo, 'Java') }}:
-  - ${{ if eq(variable.fooo, true) }}:
+- ${{ if eq( $(Build), 'Java') }}:
+  - ${{ if eq( $(sonarQubeRunAnalysis), true) }}:
     - template: sonarcloudprepare.yml
   - template: MavenBuild.yml
-  - ${{ if eq(variable.fooo, true) }}:
+  - ${{ if eq( $(sonarQubeRunAnalysis), true) }}:
     - template: SonarCloud.yml
-  - ${{ if eq(variable.doc, true) }}:
+  - ${{ if eq( $(Docker), true) }}:
     - template: Docker.yml
   - template: PublishArtifact.yml
-- ${{ if eq(variable.foo, 'dotnet') }}:
+- ${{ if eq( $(Build), 'dotnet') }}:
   - template: dotnetTemplate.yml
