@@ -1,4 +1,4 @@
-variable:
+variables:
   foo: $(Build)
   fooo: $(sonarQubeRunAnalysis)
   doc: $(Docker)
