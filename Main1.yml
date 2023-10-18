@@ -1,4 +1,10 @@
-
+variables:
+- name: foo
+  value: $(Build)
+- name: fooo
+  value: $(sonarQubeRunAnalysis)
+- name: doc
+  value: $(Docker)
 # parameters:
 #   Build: 'Java'
 #   sonarQubeRunAnalysis: false
@@ -10,13 +16,6 @@
 # - name: Docker
 #   type: string
 steps:
-variables:
-- name: foo
-  value: $(Build)
-- name: fooo
-  value: $(sonarQubeRunAnalysis)
-- name: doc
-  value: $(Docker)
 - ${{ if eq(variable.foo, 'Java') }}:
   - ${{ if eq(variable.fooo, true) }}:
     - template: sonarcloudprepare.yml
