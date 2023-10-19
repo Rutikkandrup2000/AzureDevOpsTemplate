@@ -20,16 +20,20 @@ steps:
   displayName: Display Variable
   inputs:
     script: |
-      foo=$(Build)
-      echo $foo
-# - ${{ if eq(parameters.Build, 'Java') }}:
-#   - ${{ if eq(parameters.sonarQubeRunAnalysis, true) }}:
-#     - template: sonarcloudprepare.yml
-#   - template: MavenBuild.yml
-#   - ${{ if eq(parameters.sonarQubeRunAnalysis, true) }}:
-#     - template: SonarCloud.yml
-#   - ${{ if eq(parameters.Docker, true) }}:
-#     - template: Docker.yml
-#   - template: PublishArtifact.yml
-# - ${{ if eq(parameters.Build, 'dotnet') }}:
-#   - template: dotnetTemplate.yml
+      Build1=$(Build)
+      echo $Build1
+      SonarAnalysis=$(sonarQubeRunAnalysis)
+      echo $SonarAnalysis
+      DockerContainer=$(Docker)
+      echo $DockerContainer
+- ${{ if eq(($foo, 'Java') }}:
+  - ${{ if eq(parameters.sonarQubeRunAnalysis, true) }}:
+    - template: sonarcloudprepare.yml
+  - template: MavenBuild.yml
+  - ${{ if eq(parameters.sonarQubeRunAnalysis, true) }}:
+    - template: SonarCloud.yml
+  - ${{ if eq(parameters.Docker, true) }}:
+    - template: Docker.yml
+  - template: PublishArtifact.yml
+- ${{ if eq(parameters.Build, 'dotnet') }}:
+  - template: dotnetTemplate.yml
