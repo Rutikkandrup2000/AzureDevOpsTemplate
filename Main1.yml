@@ -20,7 +20,7 @@ steps:
   displayName: Display Variable
   inputs:
     script: |
-      foo = $(Build)
+      foo=$(Build)
       echo $(foo)
 - ${{ if eq(parameters.Build, 'Java') }}:
   - ${{ if eq(parameters.sonarQubeRunAnalysis, true) }}:
