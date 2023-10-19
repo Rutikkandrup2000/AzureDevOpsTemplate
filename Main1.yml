@@ -26,13 +26,13 @@ steps:
       echo $SonarAnalysis
       DockerContainer=$(Docker)
       echo $DockerContainer
-- ${{ if eq(parameters.Build, 'Java') }}:
-  - ${{ if eq(parameters.sonarQubeRunAnalysis, true) }}:
+- ${{ if eq($MavenBuild, 'Java') }}:
+  - ${{ if eq($SonarAnalysis, true) }}:
     - template: sonarcloudprepare.yml
   - template: MavenBuild.yml
-  - ${{ if eq(parameters.sonarQubeRunAnalysis, true) }}:
+  - ${{ if eq($SonarAnalysis, true) }}:
     - template: SonarCloud.yml
-  - ${{ if eq(parameters.Docker, true) }}:
+  - ${{ if eq($DockerContainer, true) }}:
     - template: Docker.yml
   - template: PublishArtifact.yml
 - ${{ if eq(parameters.Build, 'dotnet') }}:
