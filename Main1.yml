@@ -5,10 +5,10 @@
 #   value: $(sonarQubeRunAnalysis)
 # - name: doc
 #   value: $(Docker)
-parameters:
-  Build: 'Java'
-  sonarQubeRunAnalysis: true
-  Docker: true
+# parameters:
+#   Build: 'Java'
+#   sonarQubeRunAnalysis: true
+#   Docker: true
 # - name: Build
 #   type: string
 # - name: sonarQubeRunAnalysis
