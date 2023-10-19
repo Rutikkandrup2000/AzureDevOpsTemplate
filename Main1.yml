@@ -21,7 +21,7 @@ steps:
   inputs:
     script: |
       foo=$(Build)
-      echo $(foo)
+      echo $foo
 - ${{ if eq(parameters.Build, 'Java') }}:
   - ${{ if eq(parameters.sonarQubeRunAnalysis, true) }}:
     - template: sonarcloudprepare.yml
