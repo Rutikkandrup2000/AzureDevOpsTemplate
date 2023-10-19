@@ -32,12 +32,12 @@ steps:
     echo "##vso[task.setvariable variable=DockerContainer;isOutput=true]$(Docker)"
   name: dockerOutput
 - ${{ if eq(variables['Build1'], 'Java') }}:
-  - ${{ if eq(variables['sonarAnalysisOutput.RunSonarAnalysis'], true) }}:
+  - ${{ if eq(variables['sonarAnalysisOutput.RunSonarAnalysis'], 'true') }}:
     - template: sonarcloudprepare.yml
   - template: MavenBuild.yml
-  - ${{ if eq(variables['sonarAnalysisOutput.RunSonarAnalysis'], true) }}:
+  - ${{ if eq(variables['sonarAnalysisOutput.RunSonarAnalysis'], 'true') }}:
     - template: SonarCloud.yml
-  - ${{ if eq(variables['dockerOutput.DockerContainer'], true) }}:
+  - ${{ if eq(variables['dockerOutput.DockerContainer'], 'true') }}:
     - template: Docker.yml
   - template: PublishArtifact.yml
 # - ${{ if eq(variables['BuildMavenOutput.BuildMaven'], 'dotnet') }}:
