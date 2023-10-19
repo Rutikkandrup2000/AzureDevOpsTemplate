@@ -20,6 +20,8 @@ steps:
   displayName: Display Variable
   inputs:
     script: |
+      MavenBuild=$(Build)
+      echo $MavenBuild
       SonarAnalysis=$(sonarQubeRunAnalysis)
       echo $SonarAnalysis
       DockerContainer=$(Docker)
