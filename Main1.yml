@@ -20,7 +20,7 @@ steps:
   displayName: Display Variable
   inputs:
     script: |
-      echo "$Build1-$(Build)"
+      # echo "$Build1-$(Build)"
       SonarAnalysis=$(sonarQubeRunAnalysis)
       echo $SonarAnalysis
       DockerContainer=$(Docker)
@@ -31,7 +31,7 @@ steps:
 - script: |
     echo "##vso[task.setvariable variable=DockerContainer;isOutput=true]$(Docker)"
   name: dockerOutput
-- ${{ if eq(variables['Build1'], 'Java') }}:
+# - ${{ if eq(variables['Build1'], 'Java') }}:
   - ${{ if eq(variables['sonarAnalysisOutput.RunSonarAnalysis'], 'true') }}:
     - template: sonarcloudprepare.yml
   - template: MavenBuild.yml
