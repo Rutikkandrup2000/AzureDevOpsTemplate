@@ -2,7 +2,7 @@
 #   Build: $(Build)
 #   sonarQubeRunAnalysis: $(sonarQubeRunAnalysis)
 #   Docker: $(Docker)
-# parameters:
+parameters:
   Build: 'Java'
   sonarQubeRunAnalysis: true
   Docker: true
