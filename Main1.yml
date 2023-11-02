@@ -23,7 +23,7 @@ steps:
       echo $SonarAnalysis
       DockerContainer=$(Docker)
       echo $DockerContainer
-- ${{ if eq(variables['MavenBuild'], 'Java') }}:
+- ${{ if eq(variables['Build'], 'Java') }}:
   - template: MavenBuild.yml
 # - ${{ if eq(parameters.Build, 'Java') }}:
 #   - ${{ if eq(parameters.sonarQubeRunAnalysis, true) }}:
