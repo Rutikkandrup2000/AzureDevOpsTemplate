@@ -1,2 +1,3 @@
 parameters:
-  B
+  Build: 'Java'
+  sonar
