@@ -1,4 +1,0 @@
-parameters:
-  Build: 'Java'
-  sonarQubeRunAnalysis: true
-  Docker: true
