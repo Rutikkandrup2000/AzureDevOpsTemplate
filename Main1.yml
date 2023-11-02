@@ -2,16 +2,17 @@
 #   Build: $(Build)
 #   sonarQubeRunAnalysis: $(sonarQubeRunAnalysis)
 #   Docker: $(Docker)
+# parameters:
+#   Build: 'Java'
+#   sonarQubeRunAnalysis: true
+#   Docker: true
 parameters:
-  Build: 'Java'
-  sonarQubeRunAnalysis: true
-  Docker: true
-# - name: Build
-#   type: string
-# - name: sonarQubeRunAnalysis
-#   type: string
-# - name: Docker
-#   type: string
+- name: Build
+  type: string
+- name: sonarQubeRunAnalysis
+  type: string
+- name: Docker
+  type: string
 steps:
 - task: CmdLine@2
   displayName: Display Variable
@@ -23,14 +24,14 @@ steps:
       echo $SonarAnalysis
       DockerContainer=$(Docker)
       echo $DockerContainer
-- ${{ if eq(variables.Build, 'Java') }}:
-  - ${{ if eq(variables.sonarQubeRunAnalysis, true) }}:
+- ${{ if eq(parameters.Build, 'Java') }}:
+  - ${{ if eq(parameters.sonarQubeRunAnalysis, true) }}:
     - template: sonarcloudprepare.yml
   - template: MavenBuild.yml
-  - ${{ if eq(variables.sonarQubeRunAnalysis, true) }}:
+  - ${{ if eq(parameters.sonarQubeRunAnalysis, true) }}:
     - template: SonarCloud.yml
-  - ${{ if eq(variables.Docker, true) }}:
+  - ${{ if eq(parameters.Docker, true) }}:
     - template: Docker.yml
   - template: PublishArtifact.yml
-- ${{ if eq(variables.Build, 'dotnet') }}:
+- ${{ if eq(parameters.Build, 'dotnet') }}:
   - template: dotnetTemplate.yml
